@@ -1,0 +1,31 @@
+MPI allows for parallel processing across multiple processors or nodes in a distributed system. Each processor can work on a portion of the array, calculating the sum of its assigned elements. 
+
+The intermediate sums calculated by each processor can then be gathered to calculate the final sum.In this code, each processor calculates the partial sum of its assigned portion of the array using the calculatePartialSum method. The intermediate sums are printed out for each processor.
+
+The Gather method is then used to gather all the partial sums from each processor into the allSums array on the root process (rank 0). The root process then calculates the final sum using the calculateFinalSum method.
+
+To run this code, we'll need to set up the MPJ Express library and compile and execute the program using the MPJ Express runtime.
+
+Note that this example assumes that the number of elements in the array is evenly divisible by the number of processors. Adaptations may be necessary for cases where the array size is not evenly divisible.
+
+To execute the above program, we'll need to follow these steps:
+
+1. Install MPJ Express: MPJ Express is a Java library that provides an implementation of MPI. we can download MPJ Express from the official website: http://mpj-express.org/. Follow the installation instructions specific to our operating system.
+
+2. Set up the environment: After installing MPJ Express, we need to set up the environment variables. Add the MPJ_HOME environment variable and append the MPJ Express bin directory to the PATH variable. For example, if we installed MPJ Express in the directory `/path/to/mpj`, we would set MPJ_HOME to `/path/to/mpj` and add `$MPJ_HOME/bin` to the PATH variable.
+
+3. Compile the program: Open a terminal or command prompt and navigate to the directory where we saved the Java file (`ArraySum.java`). Then, compile the program using the `mpjrun` command provided by MPJ Express. Use the following command:
+
+   ```bash
+   mpjrun.sh -np <number_of_processors> ArraySum.java
+   ```
+
+   Replace `<number_of_processors>` with the desired number of processors. This command will compile and execute the program using the specified number of processors.
+
+   If we're using Windows, the command will be slightly different:
+
+   ```bash
+   mpjrun.bat -np <number_of_processors> ArraySum.java
+   ```
+
+4. View the output: The program will execute, and we will see the intermediate sums calculated by each processor. The final sum will be displayed by the root process (rank 0).

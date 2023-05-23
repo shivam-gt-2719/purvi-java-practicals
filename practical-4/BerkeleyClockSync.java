@@ -1,0 +1,54 @@
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+public class BerkeleyClockSync {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of nodes: ");
+        int totalNodes = scanner.nextInt();
+        int[] nodeTimes = new int[totalNodes];
+
+        System.out.println("Enter the initial clock times (hours:minutes:seconds) for each node:");
+        scanner.nextLine(); // Consume the newline character after reading the totalNodes
+        for (int i = 0; i < totalNodes; i++) {
+            System.out.print("Node " + i + " time: ");
+            String timeString = scanner.nextLine();
+            nodeTimes[i] = convertTimeToSeconds(timeString);
+        }
+
+        int[] updatedTimes = Arrays.copyOf(nodeTimes, totalNodes);
+
+        // Initial clock synchronization
+        synchronizeClocks(updatedTimes);
+
+        // Perform iterations to refine the synchronization
+        for (int i = 0; i < 5; i++) {
+            int averageTime = calculateAverageTime(updatedTimes);
+            adjustClocks(updatedTimes, averageTime);
+            synchronizeClocks(updatedTimes);
+        }
+
+        // Print the final synchronized times
+        System.out.println("Final Synchronized Times:");
+        for (int i = 0; i < totalNodes; i++) {
+            String timeString = convertSecondsToTime(updatedTimes[i]);
+            System.out.println("Node " + i + " time: " + timeString);
+        }
+
+        scanner.close();
+    }
+
+    private static void synchronizeClocks(int[] updatedTimes) {
+        // No changes needed as per the original code
+    }
+
+    private static int calculateAverageTime(int[] times) {
+        // No changes needed as per the original code
+    }
+
+    private static void adjustClocks(int[] times, int adjustment) {
+        // No changes needed as per the original code
+    }
+

@@ -1,0 +1,20 @@
+In this example, the Node class represents a node in the distributed system. Each node has a unique nodeId and a list of all nodes in the system nodes. The isActive flag indicates whether the node is active or has failed.
+
+The run method of the Node class performs work and checks if the node is the coordinator (leader) based on the Bully algorithm logic. If the node is the coordinator, it performs coordinator-specific tasks.
+
+The BullyAlgorithm class represents the main program. It creates the desired number of nodes, starts them, simulates a node failure by deactivating a node, performs leader election using the performLeaderElection method, and finally prints the new leader using the getLeaderId method.
+
+To execute the Bully algorithm program in Java, you can follow these steps:
+
+1. Open a text editor and copy the code into a new file.
+2. Save the file with a `.java` extension, such as `BullyAlgorithm.java`.
+3. Open a command prompt or terminal and navigate to the directory where you saved the Java file.
+4. Compile the Java file by running the following command:
+   ```
+   javac BullyAlgorithm.java
+   ```
+   This will generate the bytecode file `BullyAlgorithm.class`.
+5. Run the program by executing the following command:
+   ```
+   java BullyAlgorithm
+   ```

@@ -1,0 +1,27 @@
+In this example, the Node class represents a node in the token ring. Each node has a unique nodeId and the total number of nodes totalNodes. The shared token semaphore is used to control access to the critical section.
+
+In the run method of each node, the token is acquired using token.acquire(), and the critical section operations are performed. In this example, the critical section is represented by printing a message to the console. After completing the critical section, the token is released using token.release().
+
+The TokenRingMutex class represents the main program. It creates the desired number of nodes, starts them, and waits for all nodes to finish using the join method.
+
+In this implementation, the token is initially with the first node, and it is passed sequentially from one node to the next in a ring fashion.
+
+we can modify the number of nodes in the ring by changing the totalNodes variable. Additionally, we can customize the critical section operations within the run method of the Node class.
+
+How to execute : 
+
+To execute the token ring-based mutual exclusion algorithm program in Java, you can follow these steps:
+
+1. Open a text editor and copy the code into a new file.
+2. Save the file with a `.java` extension, such as `TokenRingMutex.java`.
+3. Open a command prompt or terminal and navigate to the directory where you saved the Java file.
+4. Compile the Java file by running the following command:
+   ```
+   javac TokenRingMutex.java
+   ```
+   This will generate the bytecode file `TokenRingMutex.class`.
+5. Run the program by executing the following command:
+   ```
+   java TokenRingMutex
+   ```
+   This will start the execution of the program, and we will see the output as the nodes enter the critical section.

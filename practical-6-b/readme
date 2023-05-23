@@ -1,0 +1,5 @@
+In this implementation, the Node class represents a node in the distributed system. Each node has a unique nodeId and a list of all nodes in the system nodes. The isActive flag indicates whether the node is active or has failed.
+
+The run method of the Node class performs work and checks if the node is the leader based on the Ring algorithm logic. If the node has the highest ID, it is considered the leader and can perform leader-specific tasks.
+
+The RingAlgorithm class represents the main program. It creates the desired number of nodes, starts them, and each node runs concurrently, performing work and determining if it is the leader based on the Ring algorithm logic.
