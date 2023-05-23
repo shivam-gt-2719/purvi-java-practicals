@@ -41,14 +41,21 @@ public class BerkeleyClockSync {
     }
 
     private static void synchronizeClocks(int[] updatedTimes) {
-        // No changes needed as per the original code
+        System.arraycopy(NODE_TIMES, 0, updatedTimes, 0, NODE_TIMES.length);
     }
 
     private static int calculateAverageTime(int[] times) {
-        // No changes needed as per the original code
+        int totalNodes = times.length;
+        int sum = 0;
+        for (int time : times) {
+            sum += time;
+        }
+        return sum / totalNodes;
     }
 
     private static void adjustClocks(int[] times, int adjustment) {
-        // No changes needed as per the original code
+        for (int i = 0; i < times.length; i++) {
+            times[i] = times[i] + adjustment;
+        }
     }
-
+}
