@@ -4,7 +4,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 public class HostnameResolver {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("\n Enter the IP address to Resolve its Name to Host name:");
         String ipAddress = br.readLine();

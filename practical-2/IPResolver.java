@@ -1,8 +1,9 @@
+import java.io.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 public class IPResolver {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("\n Enter the website url (like google.com) to Resolve its Name to Address:");
         String hostname = br.readLine();
