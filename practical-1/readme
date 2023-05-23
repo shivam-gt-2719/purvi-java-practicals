@@ -1,0 +1,8 @@
+To compile all the java programs execute :
+```make compile-java```
+
+To start server execute:
+```make start-server```
+
+To start client execute:
+```make start-client```

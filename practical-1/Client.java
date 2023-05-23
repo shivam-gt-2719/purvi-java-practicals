@@ -11,6 +11,7 @@ public class Client {
 			x = input.nextInt();
 			System.out.println("Enter int 2: ");
 			y = input.nextInt();
+            System.out.println("Bigger num :");
             System.out.println(remoteObj.BiggerNum(x, y)); // Invoke remote method
         } catch (Exception e) {
             e.printStackTrace();
